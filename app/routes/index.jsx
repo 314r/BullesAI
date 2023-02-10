@@ -16,7 +16,7 @@ export const action = async ({ request }) => {
 
   const baseHopPrompt = `From the recipe below, return a formatted list of the hops.
   Each hop must be in this form :
-  - NAME, WEIGHT (converted in kg), TIME (in minutes), USE (could be Boil, HopStand, Dry Hop)
+  - NAME, WEIGHT (convert in kg), TIME (in minutes), USE (could be Boil, HopStand, Dry Hop)
   Recipe :
   `
 
@@ -29,7 +29,7 @@ export const action = async ({ request }) => {
     model: "text-davinci-003",
     prompt: `${baseHopPrompt}${recipeInput}\n`,
     temperature: 0.9,
-    max_tokens: 1000,
+    max_tokens: 200,
   })
 
   const baseHopPromptOutput = baseHopCompletion.data.choices.pop()
@@ -52,7 +52,7 @@ export const action = async ({ request }) => {
     model: "text-davinci-003",
     prompt: `${promptHopXml}\n`,
     temperature: 0.9,
-    max_tokens: 1000,
+    max_tokens: 500,
   })
 
   const hopsXmlOutput = hopsXmlCompletion.data.choices.pop()
@@ -67,7 +67,7 @@ export const action = async ({ request }) => {
     model: "text-davinci-003",
     prompt: `${baseGrainPrompt}${recipeInput}\n`,
     temperature: 0.9,
-    max_tokens: 1000,
+    max_tokens: 200,
   })
 
   const baseGrainPromptOutput = baseGrainCompletion.data.choices.pop()
@@ -89,7 +89,7 @@ export const action = async ({ request }) => {
     model: "text-davinci-003",
     prompt: `${promptGrainXml}\n`,
     temperature: 0.9,
-    max_tokens: 1000,
+    max_tokens: 500,
   })
 
   const grainXmlOutput = grainXmlCompletion.data.choices.pop()
@@ -101,7 +101,7 @@ export const action = async ({ request }) => {
     model: "text-davinci-003",
     prompt: `${volumePrompt}\n`,
     temperature: 0.9,
-    max_tokens: 1000,
+    max_tokens: 100,
   })
 
   const volumePromptOutput = volumeCompletion.data.choices.pop()
