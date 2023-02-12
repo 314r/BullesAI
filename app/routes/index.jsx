@@ -184,7 +184,7 @@ export default function Index() {
               <Tabs.Content value="tab1">
                 {dreamText ? (
                   <>
-                    <h2 className="pb-4 text-xl">Batch volume</h2>
+                    <h2 className="pb-4 pt-8 text-xl">Batch volume</h2>
                     <pre className="whitespace-pre-wrap rounded-xl bg-slate-700 px-2 pb-3 text-white">
                       <code>
                         {dreamText
