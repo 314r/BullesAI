@@ -144,11 +144,11 @@ export default function Index() {
   const isCreating = Boolean(navigation.state === "submitting")
 
   return (
-    <>
+    <div className=" flex flex-1 flex-col justify-between">
       <header>
         <h1 className="mt-24 text-center text-6xl font-bold">BullesAI</h1>
       </header>
-      <main>
+      <main className="relative pb-8">
         <div className=" mt-24 flex justify-center">
           <Form method="post" className="mr-24 w-1/3">
             <label htmlFor="recipeInput" className="block pb-6">
@@ -224,6 +224,9 @@ export default function Index() {
           </div>
         </div>
       </main>
-    </>
+      <footer className="mt-12 flex w-full justify-center pb-3 text-slate-500">
+        a small POOC by joliebulle
+      </footer>
+    </div>
   )
 }
