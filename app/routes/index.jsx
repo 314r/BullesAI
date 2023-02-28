@@ -15,8 +15,9 @@ export const action = async ({ request }) => {
   const recipeInput = formData.get("recipeInput")
 
   const baseHopPrompt = `From the recipe below, return a formatted list of the hops.
+  For conversions use : 1g = 0.001kg, 1oz =  0.0283495kg.
   Each hop must be in this form :
-  - NAME, WEIGHT (convert in kg), TIME (in minutes), USE (could be Boil, HopStand, Dry Hop)
+  - NAME, WEIGHT (converted in kg), TIME (in minutes), USE (could be Boil, HopStand, Dry Hop)
   Recipe :
   `
 
